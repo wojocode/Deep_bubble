@@ -76,15 +76,15 @@ section button{
     margin:0 auto;
     display:block;
     border-radius:1rem;
-    padding:0;
+    padding:0.1rem;
 }
 section button a{
     display:block;
     text-decoration: none;
     color:white;
-    padding:0.5rem;
     border-radius:inherit;
     font-size:0.8rem;
+    padding:0.5rem;
 }
 .sidebar{
     display:none;
@@ -109,12 +109,56 @@ section button a{
         transform:translateY(-50%);
         max-width:700px;
         text-align: initial;
+        z-index:3;
     }
     section button{
         background: none;
         border:1px solid white;
         width:100px;
         margin:0 0;
+    }
+    .bubbles{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        bottom:-150px;
+        width:90%;
+        left:0;
+        right:0;
+        margin:0 auto;
+        z-index:-1;
+    }
+    .bubbles img{
+        animation: normal  10s infinite linear move_like_bubble;
+    }
+    .bubbles img:nth-child(1){
+        width:3.5%;
+        animation-delay: 1.3s;
+    }
+    .bubbles img:nth-child(2){
+        width:5%;
+        animation-delay: 0.3s;
+    }
+    .bubbles img:nth-child(3){
+        width:3.5%;
+        animation-delay: 3.8s;
+    }
+    .bubbles img:nth-child(4){
+        width:5%;
+        animation-delay: 2s;
+    }
+    .bubbles img:nth-child(5){
+        width:5%;
+        animation-delay: 5.8s;
+    }
+    .bubbles img:nth-child(6){
+        width:3.5%;
+        animation-delay: 8s;
+    }
+    .bubbles img:nth-child(7){
+        width:4%;
+        animation-delay: 5.5s;
     }
 }
 @media screen and (min-width:900px){
@@ -154,37 +198,20 @@ section button a{
         gap:0.6rem;
         align-items: center;
     }
-    .bubbles{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        position: fixed;
-        bottom:0px;
-        width:90%;
-        left:0;
-        right:0;
-        margin:0 auto;
-        border:1px solid red;
+}
+@keyframes move_like_bubble {
+    0%{
+        trantransform:translateY(0);
+        opacity:0.55;
     }
-    .bubbles img:nth-child(1){
-        width:3.5%;
+    70%{
+        opacity:0.55;
     }
-    .bubbles img:nth-child(2){
-        width:7%;
+    90%{
+        opacity:0;
     }
-    .bubbles img:nth-child(3){
-        width:3.5%;
-    }
-    .bubbles img:nth-child(4){
-        width:7%;
-    }
-    .bubbles img:nth-child(5){
-        width:7%;
-    }
-    .bubbles img:nth-child(6){
-        width:3.5%;
-    }
-    .bubbles img:nth-child(7){
-        width:5%;
+    100%{
+        opacity:0;
+        transform:translateY(-80vh);
     }
 }
